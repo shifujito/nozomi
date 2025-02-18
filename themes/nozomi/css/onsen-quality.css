@@ -1,0 +1,203 @@
+.onsen-header-image {
+  width: 100%;
+  /* 親要素の幅いっぱいに拡大 */
+  height: 250px;
+  /* 高さを固定（任意で調整） */
+  overflow: hidden;
+  /* はみ出す部分を隠す */
+  position: relative;
+  color: #fff;
+}
+
+.onsen-header-image img {
+  width: 100%;
+  /* 画像の幅を親要素いっぱいに設定 */
+  height: 100%;
+  /* 画像の高さを親要素いっぱいに設定 */
+  object-fit: cover;
+  /* 縦横比を保ちながら要素全体を埋める */
+  object-position: center center;
+  /* 下部を表示 */
+}
+
+.onsen-quality-container {
+  /* align-items: center; */
+  /* height: 100vh; */
+  text-align: center;
+  background-size: cover;
+  /* 追加 */
+  width: 100%;
+}
+
+/* タイトル部分のスタイル (既存) */
+.onsen-quality-content {
+  text-align: center;
+}
+
+.onsen-quality-intro {
+  padding: 10vh 0;
+  background: url('../images/bg-image.png') center center no-repeat;
+}
+
+.quality-title {
+  /* 和文に合うフォントの例: Yu Mincho, serif */
+  font-family: "Yu Mincho", serif;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.quality-subtitle {
+  font-family: "Yu Gothic", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+
+}
+
+
+/* ３つの特徴セクション */
+.spring-features {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* 左右に余白を少し持たせたい場合は 0 20px; などに */
+  color: #555;
+}
+
+
+/* 各特徴 */
+.feature {
+  display: flex;
+  /* Flexboxで横並びに */
+  align-items: center;
+  /* 垂直方向中央寄せ */
+  background-color: #FAF0E6;
+}
+
+/* 子要素（画像部分、テキスト部分） */
+.feature-image,
+.feature-text {
+  flex: 1;
+  /* 横幅を均等に分割 */
+}
+
+/* feature-image の中の img を大きめに調整 */
+.feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* 余白を消すためにブロック要素化 */
+}
+
+/* h2, p のスタイルはお好みで */
+.feature-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  text-align: left;
+  line-height: 2.5;
+  margin: 0;
+  padding-left: 5vw;
+}
+
+.spring-facilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.facility-item {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.facility-image {
+  margin-bottom: 1rem;
+  aspect-ratio: 4/3;
+  /* 画像の縦横比を4:3に固定 */
+  overflow: hidden;
+  /* はみ出た部分を隠す */
+}
+
+.facility-image img {
+  width: 100%;
+  height: 100%;
+  /* 親要素いっぱいに広げる */
+  object-fit: cover;
+  /* アスペクト比を保ちながら領域を埋める */
+  border-radius: 8px;
+}
+
+.facility-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.facility-description {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: left;
+  padding: 0 1vw;
+}
+
+/* 偶数番目(2,4,6...)は画像を右, テキストを左にする */
+.spring-features section:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+/* 奇数番目(1,3,5...)は画像を左, テキストを右にする */
+.spring-features section:nth-child(2n+1) {
+  flex-direction: row;
+}
+
+/* サブメニューナビゲーション */
+.facility-submenu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  background-color: #FAF0E6;
+  margin: 0;
+}
+
+.facility-submenu-item {
+  list-style: none;
+}
+
+.facility-submenu-link {
+  text-decoration: none;
+  color: #555;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.facility-submenu-link:hover {
+  color: #000;
+}
+
+/* ホバー時の下線アニメーション */
+.facility-submenu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #555;
+  transition: width 0.3s ease;
+}
+
+.facility-submenu-link:hover::after {
+  width: 100%;
+}

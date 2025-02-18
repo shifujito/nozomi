@@ -1,0 +1,683 @@
+/*
+Theme Name: Nozomi
+Theme URI: https://www.ajigauraonsen.jp/
+Author: Nozomi
+Author URI: https://www.ajigauraonsen.jp/
+Description: Nozomi Theme for WordPress
+Version: 1.0
+*/
+
+/* ========== Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== Base Styles ========== */
+html,
+body {
+  height: 100%;
+  font-family: "Hiragino Sans Mono", "Kozuka Mincho Pro", serif;
+  color: #fff;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.new-header {
+  background: url('../images/bg-image.png') center no-repeat;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.site-main {
+  margin-top: 70px;
+  /* ヘッダーの高さを考慮 */
+  padding: 20px;
+  flex: 1;
+}
+
+/* ========== Header ========== */
+.header {
+  padding: 10px 20px;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 999;
+  position: fixed;
+}
+
+/* 通常ページのヘッダー */
+.solid-header {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* トップページのヘッダー */
+.transparent-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* 通常ページのリンク色 */
+.solid-header h1 a,
+.solid-header .menu-bar li a {
+  color: #333;
+}
+
+/* トップページのリンク色 */
+.transparent-header h1 a,
+.transparent-header .menu-bar li a {
+  color: #fff;
+}
+
+/* ホバーエフェクト - 通常ページ */
+.solid-header .menu-bar>li>a::after {
+  background: #333;
+}
+
+/* ホバーエフェクト - トップページ */
+.transparent-header .menu-bar>li>a::after {
+  background: #fff;
+}
+
+.menu-bar {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar>li {
+  position: relative;
+  padding: 20px;
+}
+
+.menu-bar>li>a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* ドロップダウンメニュー */
+.has-submenu .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 0;
+  z-index: 1000;
+}
+
+.has-submenu:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.sub-menu li:last-child {
+  border-bottom: none;
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sub-menu a:hover {
+  color: #666;
+}
+
+/* ホバーエフェクト */
+.menu-bar>li>a::after {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  width: 0;
+  height: 2px;
+  background: #333;
+  transition: width 0.3s ease;
+}
+
+.menu-bar>li:hover>a::after {
+  width: calc(100% - 40px);
+}
+
+/* WordPress管理バー対応 */
+body.admin-bar header {
+  margin-top: 32px;
+}
+
+@media (max-width: 782px) {
+  body.admin-bar header {
+    margin-top: 46px;
+  }
+}
+
+/* ========== Hero Video ========== */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 2;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50vh;
+  right: 12rem;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-align: center;
+  color: #fff;
+}
+
+.overlay-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.overlay-text h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: -1rem;
+}
+
+/* ========== Section Title ========== */
+.section-title {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15vh 0;
+  background: url('./images/bg-image.png') center center no-repeat;
+  background-size: cover;
+}
+
+.charm-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.divider {
+  display: inline-block;
+  min-width: 200px;
+  /* 必要なら横棒の最小幅を設定 */
+  max-width: 300px;
+  /* 必要なら横棒の最大幅を設定 */
+  border: none;
+  border-top: 2px solid #fff;
+  margin: 10px 0;
+}
+
+.charm-subtitle {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+/* ========== Charm Section ========== */
+.charm {
+  margin: 0;
+  padding: 0;
+}
+
+/* 魅力セクションの背景用 */
+.background-wrapper {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* 透過具合を調整して明るさを落とす */
+  pointer-events: none;
+  /* マウス操作を透過 */
+}
+
+.background-wrapper1 {
+  background-image: url('./images/charm1-bg.jpg');
+}
+
+.background-wrapper2 {
+  background-image: url('./images/charm2.jpg');
+}
+
+.background-wrapper3 {
+  background-image: url('./images/charm3-bg.jpg');
+}
+
+.background-wrapper4 {
+  background-image: url('./images/charm4-bg.jpg');
+}
+
+
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* 必要に応じてオーバーレイを追加するならここで */
+}
+
+.background-wrapper>* {
+  position: relative;
+  z-index: 2;
+}
+
+.charm-feature {
+  width: 100%;
+  padding: 0 20px 10vh 20px;
+  text-align: center;
+  position: relative;
+}
+
+.charm-feature-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10vh 0 0;
+}
+
+.charm-feature-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 5vh 0 0 15vw;
+}
+
+.charm-feature-description-container {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 80%;
+  padding: 1rem;
+  align-items: center;
+  color: #fff;
+}
+
+
+
+.charm-feature-description-container p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+}
+
+/* Charm Feature List (箇条書き) */
+.charm-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10vh 0 0;
+  padding: 0;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+}
+
+.charm-feature-list li {
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: left;
+  padding-top: 10px;
+  white-space: nowrap;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* ========== News Section ========== */
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: url('./images/bg-image.png') center center no-repeat;
+  background-size: cover;
+  padding: 10vh 0;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.news-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.news-divider {
+  display: inline-block;
+  border: none;
+  border-top: 2px solid #fff;
+  margin: 10px 0;
+}
+
+.news-subtitle {
+  font-size: 20px;
+  margin: 0;
+}
+
+.news-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-post-item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-post-item:last-child {
+  border-bottom: none;
+}
+
+.news-post-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.news-post-tags {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff7f50;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.news-post-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.news-post-link:hover {
+  color: #ff7f50;
+  text-decoration: underline;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #f5f5f5;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  max-width: 240px;
+  margin-right: 20px;
+}
+
+.footer-info {
+  text-align: left;
+}
+
+.footer-address,
+.footer-phone {
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ========== Link Cards (アクセス, 観光情報など) ========== */
+.front-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.front-link {
+  flex: 1 1 calc(50% - 20px);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.front-link:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.link-container {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.access-link {
+  background-image: url('./images/access.png');
+}
+
+.tourism-link {
+  background-image: url('./images/tourism.jpg');
+}
+
+.link h2,
+.link h3,
+.link p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.link h2 {
+  font-size: 36px;
+}
+
+.link h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.link p {
+  margin: 10px 0 0;
+  font-size: 24px;
+}
+
+/* ========== SNS ========== */
+.sns-container {
+  text-align: center;
+  padding: 10vh 0;
+  background: url('./images/bg-image.png') center center no-repeat;
+  background-size: cover;
+}
+
+.sns-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sns-subtitle {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+.sns-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sns-item a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.sns-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sns-item a:hover img {
+  transform: scale(1.2);
+}
+
+
+/* ========== Responsive (例) ========== */
+@media (max-width: 1366px) {
+  .overlay-text h1 {
+    font-size: 3rem;
+  }
+
+  .overlay-text h2 {
+    font-size: 1.2rem;
+    top: -1rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .overlay-text h1 {
+    font-size: 5rem;
+  }
+
+  .overlay-text h2 {
+    font-size: 2rem;
+    top: -2rem;
+  }
+
+  .charm-feature-description-container p {
+    font-size: 2rem;
+  }
+
+  .slideshow-container {
+    max-width: 1050px;
+    height: 700px;
+  }
+
+  .charm-feature-title {
+    font-size: 5rem;
+  }
+
+  .charm-feature-list li {
+    font-size: 2rem;
+  }
+}

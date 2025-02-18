@@ -1,0 +1,27 @@
+.fixed-container {
+  text-align: center;
+  /* 子要素のテキストを中央寄せ */
+  color: #555;
+}
+
+.fixed-page-title {
+  display: inline-block;
+  /* インライン要素として扱う */
+  margin: 90px auto 0;
+  /* 必要に応じて余白を調整 */
+  font-size: 36px;
+  /* 見出しのサイズ */
+}
+
+#booking-overview {
+  display: flex;
+  /* フレックスボックスを有効にする */
+  justify-content: center;
+  /* 水平方向に中央寄せ */
+  align-items: center;
+  /* 垂直方向に中央寄せ */
+  text-align: left;
+  /* テキストを中央寄せ */
+  height: 100%;
+  /* 必要に応じて親要素の高さに合わせる */
+}

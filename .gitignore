@@ -1,0 +1,18 @@
+# WordPress core files (管理不要)
+wp-admin/
+wp-includes/
+wp-config.php
+
+# キャッシュファイル
+wp-content/cache/
+wp-content/backup-*
+
+# アップロードファイルはGit管理しない
+wp-content/uploads/
+
+# Localの環境ファイル
+*.log
+*.sqlite
+logs/
+conf/
+app/sql/

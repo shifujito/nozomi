@@ -1,0 +1,157 @@
+body {
+  color: #fff;
+  line-height: 1.6;
+  background: url('../images/bg-image.png') center center;
+  /* background: url('../images/bg3.jpg') center center; */
+  background-size: cover;
+}
+
+.onsen-guide-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.onsen-content {
+  margin-top: 10px;
+}
+
+.onsen-header-image {
+  width: 100%;
+  /* 親要素の幅いっぱいに拡大 */
+  height: 250px;
+  /* 高さを固定（任意で調整） */
+  overflow: hidden;
+  /* はみ出す部分を隠す */
+  position: relative;
+}
+
+.onsen-header-image img {
+  width: 100%;
+  /* 横幅を100%に広げる */
+  height: auto;
+  /* アスペクト比を維持 */
+  object-fit: cover;
+  /* 高さが不足した場合、中央部分を切り取り */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 画像を中央揃え */
+}
+
+.onsen-title {
+  font-size: 32px;
+  position: relative;
+  /* 線をタイトルの下に配置 */
+  margin-bottom: 5px;
+  /* 下の余白を調整 */
+  padding-bottom: 5px;
+  /* タイトル下のスペースを調整 */
+  text-align: center;
+  /* タイトルを中央揃え（任意） */
+}
+
+.onsen-title::after {
+  content: "";
+  /* 疑似要素で線を描画 */
+  display: block;
+  width: 50%;
+  /* 横線の幅（中央揃えの場合） */
+  height: 2px;
+  /* 横線の高さ */
+  background-color: #fff;
+  /* 横線の色 */
+  margin: 10px auto 0;
+  /* 上下の余白と中央揃え */
+}
+
+.onsen-subtitle {
+  position: relative;
+  /* 線をタイトルの下に配置 */
+  margin: 0;
+  /* 下の余白を調整 */
+  padding-bottom: 10px;
+  /* タイトル下のスペースを調整 */
+  text-align: center;
+  /* タイトルを中央揃え（任意） */
+  font-size: 20px;
+}
+
+.onsen-table {
+  width: 100%;
+  /* テーブルの幅を親要素いっぱいに */
+  max-width: 800px;
+  /* 最大幅を指定 */
+  margin: 0 auto 30px;
+  /* 中央寄せと下マージン */
+  border-collapse: collapse;
+  /* 枠線をまとめる */
+  background-color: #fff;
+  color: #555;
+  /* テーブル背景を白に */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* 軽い影を追加 */
+}
+
+.onsen-table th,
+.onsen-table td {
+  border: 1px solid #ddd;
+  /* 枠線を淡いグレーに */
+  padding: 15px;
+  /* 余白を追加 */
+  text-align: left;
+  /* 左揃え */
+  vertical-align: top;
+  /* 上揃え */
+}
+
+.onsen-table th {
+  background-color: #f7e7c4;
+  /* 見出しに濃いクリーム色 */
+  color: #333;
+  /* テキスト色を濃く */
+  font-weight: bold;
+  /* 太字 */
+}
+
+.onsen-table ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.onsen-table ul li {
+  margin-bottom: 5px;
+}
+
+.onsen-table p {
+  margin: 5px 0;
+}
+
+.onsen-map {
+  max-width: 800px;
+  /* 地図の最大幅を設定 */
+  margin: 20px auto;
+  /* ページ中央に配置 */
+  background-color: #fff;
+  /* 背景を白に設定 */
+  padding: 10px;
+  /* 余白を追加 */
+  border: 1px solid #ddd;
+  /* 薄い枠線を追加 */
+  border-radius: 8px;
+  /* 角を丸める */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* 軽い影を追加 */
+}
+
+.onsen-map iframe {
+  width: 100%;
+  /* 幅を親要素にフィットさせる */
+  height: 450px;
+  /* 高さを固定 */
+  border: none;
+  /* 枠線を消す */
+  border-radius: 4px;
+  /* 角を少し丸める */
+}
