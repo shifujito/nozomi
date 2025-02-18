@@ -1,18 +1,36 @@
 .new-header {
-  background: url('../images/bg-image.png') center center no-repeat;
-  background-size: cover;
   width: 100%;
   margin-top: 80px;
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #333;
+}
+
+
+.new-title {
+  position: relative;
+  padding-bottom: 15px;  /* 下線との間隔 */
+}
+
+
+.new-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);  /* 中央揃え */
+  width: 60vw;  /* 下線の長さ */
+  height: 3px;  /* 下線の太さ */
+  background-color: #555;  /* 下線の色 */
 }
 
 .news-archive {
   padding: 30px 0;
   background-color: #f5f5f5;
 }
+
 
 .container {
   max-width: 1200px;
